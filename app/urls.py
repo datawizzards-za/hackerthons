@@ -1,6 +1,5 @@
 from django.conf.urls import url
-from views import Home
+from views import Dashboard
 
 urlpatterns = [
-    url(r'^\Z', Home.as_view(), name='index'),
 ]

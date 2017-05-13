@@ -12,13 +12,13 @@ class RandomForestModel:
 
     def train(self):
         self.classifier.fit(self.Xtrain, self.ytrain)
-        print self.classifier.feature_importances_
+        #print self.classifier.feature_importances_
 
     def get_accuracy(self):
         predicted = self.classifier.predict(self.Xtest)
         anomaly_points = predicted.tolist().index(0)
-        print self.Xtest[anomaly_points]
+        #print self.Xtest[anomaly_points]
         self.classifier.fit(self.Xtest, self.ytest)
-        print self.classifier.feature_importances
+        #print self.classifier.feature_importances
         accuracy = accuracy_score(self.ytest, predicted)
         return accuracy, anomaly_points
