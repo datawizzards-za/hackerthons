@@ -1,0 +1,2 @@
+
+DATAFILE = 'data/creditcard.csv'
