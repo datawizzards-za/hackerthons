@@ -5,8 +5,83 @@ from pymongo import MongoClient
 #from fraudmaster.auth import MongoBdAuth as DBAuth
 
 
-class Home(View):
-    template_name = 'app/index.html'
+class Help(View):
+    template_name = 'guidely.html'
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        return render(request, self.template_name)
+    
+
+class Settings(View):
+    template_name = 'charts.html'
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        return render(request, self.template_name)
+
+
+class Financials(View):
+    template_name = 'reports.html'
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        return render(request, self.template_name)
+
+
+class Analysis(View):
+    template_name = 'charts.html'
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        return render(request, self.template_name)
+
+
+class Dashboard(View):
+    template_name = 'dashboard.html'
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        return render(request, self.template_name)
+
+
+class ModelTraining(View):
+    template_name = 'app.html'
 
     def get(self, request):
         model = fraud_models.RandomForestModel()
@@ -19,10 +94,6 @@ class Home(View):
 
         context = {'accuracy': accuracy, 'anomaly_points':anomaly_points}
         return render(request, self.template_name, context)
-
-
-class ModelTraining(View):
-    template_name = 'app/app.html'
 
 
 class MongoDBOperations:
