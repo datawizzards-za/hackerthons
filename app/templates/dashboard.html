@@ -67,18 +67,14 @@
                                                 </tr>
                                               </thead>
                                               <tbody>
+                                                {% for item in values %}
                                                 <tr class="hvr-shrink">
-                                                  <td> Fresh Web Development Resources </td>
-                                                  <td> http://www.egrappler.com/ </td>
-                                                  <td> http://www.egrappler.com/ </td>
+                                                  <td> {{ item.0 }}</td>
+                                                  <td> R{{ item.1 }} </td>
+                                                  <td> Fraudulent </td>
                                                   <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
                                                 </tr>
-                                                <tr class="hvr-shrink">
-                                                  <td> Fresh Web Development Resources </td>
-                                                  <td> http://www.egrappler.com/ </td>
-                                                  <td> http://www.egrappler.com/ </td>
-                                                  <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
-                                                </tr>
+                                                {% endfor %}
                                               </tbody>
                                             </table>
                                           </div>
@@ -99,10 +95,11 @@
                                                 </tr>
                                               </thead>
                                               <tbody>
+                                              {% for item in values %}
                                                 <tr class="hvr-shrink">
-                                                  <td> Fresh Web Development Resources </td>
-                                                  <td> http://www.egrappler.com/ </td>
-                                                  <td> http://www.egrappler.com/ </td>
+                                                  <td> {{ item.1 }} </td>
+                                                  <td> {{ item.0 }} </td>
+                                                  <td> Fraudulent </td>
                                                   <td class="td-actions">
                                                       <a href="javascript:;" class="btn btn-block btn-danger">
                                                           <i class="btn-icon-only icon-remove"> </i>
@@ -118,7 +115,6 @@
                                 </div>
                                 </div>
                             <!-- tab style -->
->>>>>>> dev
                         </div>
                         <!-- /widget-content -->
             </div>
