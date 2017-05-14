@@ -2,12 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from app.fraud_engine import fraud_models
 from app.fraud_engine.fraud_models import RandomForestModel
-from pymongo import MongoClient
-import numpy as np
-
-
-# from fraudmaster.auth import MongoBdAuth as DBAuth
-
+from numpy import where
 
 class Help(View):
     template_name = 'guidely.html'
@@ -87,9 +82,10 @@ class Dashboard(View):
 
         """
         X, y = RandomForestModel().get_data()
-        indexes = np.where(y == 1)[0]
-        X_anomaly = [[index, X[:, -1][index]] for index in indexes]
-        #print X_anomaly
+        indexes = where(y == 1)[0]
+        X_anomaly = [{'account': int(X[:, -1][index]), 'amount': X[:, 0][index]
+                      ,'fraud':y[index]} for index in indexes]
+
         context = {'values': X_anomaly, 'indexes': indexes}
         return render(request, self.template_name, context)
 
@@ -101,25 +97,5 @@ class ModelTraining(View):
         model = fraud_models.RandomForestModel()
         model.train()
         accuracy, anomaly_points = model.get_accuracy()
-        operation = MongoDBOperations()
-        db = operation.config()
-        # operation.add_transactions(db)
-        print operation.get_transactions(db)
-
         context = {'accuracy': accuracy, 'anomaly_points': anomaly_points}
         return render(request, self.template_name, context)
-
-
-class MongoDBOperations:
-    def config(self):
-        connection = MongoClient()
-        db = connection["testdatabase"]
-        collection = db["fraudstar"]
-
-        return collection
-
-    def add_transactions(self, collection):
-        collection.insert({"name": "Canada"})
-
-    def get_transactions(self, collection):
-        return collection.find({})
