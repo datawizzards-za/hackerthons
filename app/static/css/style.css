@@ -251,8 +251,7 @@ textarea {
 
 .main {
 	padding-bottom: 2em;
-	
-	border-bottom: 1px solid #000;
+	/*border-bottom: 1px solid #fff;*/
 }
 
 
@@ -299,16 +298,15 @@ textarea {
 }
 
 
-
-
 /*------------------------------------------------------------------
 [6. Footer/ .footer]
 */
 
 .footer {
-	margin-top: 0;
-	
+    position:fixed;
 	border-top: 1px solid #292929;
+    width:100%;
+    bottom:0px;
 }
 
 .footer-inner {

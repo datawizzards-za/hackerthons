@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from app.fraud_engine import config
+from django.conf import settings
+from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 
 
 def read_data():
@@ -8,8 +11,30 @@ def read_data():
 
 
 class DataSample(object):
+    """Singleton to split data three ways; train, test and simulation.
+
+    Attributes:
+        Xtrain (vector): training features.
+        ytrain (scalar): training labels.
+        Xtest (vector): testing features.
+        ytest (scalar): testing labels.
+        Xsim (vector): simulation features.
+        ysim (scalar): simulation labels.
+    
+    """
 
     def __new__(self):
+        """Create new objects only if they have not yet been
+        instantiated.
+
+        Args:
+            None.
+
+        Returns (tuple):
+            Dataset partitioned into train, test, and simulation data.
+
+        """
+
         attribs = ['Xtrain', 'ytrain', 'Xtest', 'ytest', 'Xsim', 'ysim']
         if not self._hasattrs(attribs):
             self.Xtrain = super(DataSample, self).__new__(self)
@@ -25,16 +50,86 @@ class DataSample(object):
 
     @classmethod
     def _hasattrs(self, attribs):
+        """Check if class objects have not yet been instantiated
+        
+        Args:
+            attribs(list):  List of class objects names as strings.
+
+        Returns (Boolean):
+            True if all attributes have already been instantiated
+            otherwise false.
+
+        """
+
         for attr in attribs:
             if not hasattr(self, attr):
                 return False
+
         return True
 
     @classmethod
     def _setdata(self, data):
+        """Split data according to predefined proportions.
+
+        Args:
+            data (pandas): dataframe representing the whole dataset.
+        
+        Returns:
+            Void.
+            
+        """
+
         X = data.values[:, :-1]
         y = data.Class.values
         self.Xtrain, X_test, self.ytrain, y_test = \
             train_test_split(X, y, test_size=0.4)
         self.Xtest, self.Xsim, self.ytest, self.ysim = \
             train_test_split(X_test, y_test, test_size=0.1)
+
+
+class TransactionVerification:
+    """Lets user verify the flagged transaction as a precaution and
+    attempt to successfully identify fraudulent transactions.
+
+    Attributes:
+        data (dict): transaction data. 
+    
+    """
+
+    def __init__(self, data):
+        """Initialise transaction verification object with transaction
+        data.
+       
+        Args:
+            data (dict): transaction data. 
+
+        Returns:
+            Void.
+        
+        """
+        
+        self.data = data
+
+    def send_verification_mail(self):
+        """Given transaction data, send the user verification email to
+        let them acknowledge the fraud while also verifying whether or
+        not the transaction is fraudulent.
+        
+        Args:
+            None.
+            
+        Returns (Boolean):
+            State of the mail sending; true when sent successfully,
+            otherwise false.
+
+        """
+
+        subject = 'Fraudmaster detected a fraudulent activity on your \
+                   BankZ cheque account.'
+        from_email = settings.EMAIL_HOST_USER 
+        to = self.data['email']
+        text_content = 'Click the link below'
+
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
