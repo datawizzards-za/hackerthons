@@ -1,12 +1,12 @@
 from django.conf.urls import url
-from app.views import Dashboard, Analysis, Financials, Settings, Help
+from views import Dashboard, Analysis, Financials, Settings, Help
 
 
 urlpatterns = [
-    url(r'^\Z', Dashboard.as_view()),
-    url(r'^dashboard$', Dashboard.as_view()),
-    url(r'^analysis$', Analysis.as_view()),
-    url(r'^financials$', Financials.as_view()),
-    url(r'^settings$', Settings.as_view()),
-    url(r'^help$', Help.as_view()),
+    url(r'^\Z', Dashboard.as_view(), name='dashboard'),
+    url(r'^dashboard/', Dashboard.as_view(), name='dashboard'),
+    url(r'^analysis/', Analysis.as_view(), name='analysis'),
+    url(r'^financials/', Financials.as_view(), name='financials'),
+    url(r'^settings/', Settings.as_view(), name='settings'),
+    url(r'^help/', Help.as_view(), name='help'),
 ]
