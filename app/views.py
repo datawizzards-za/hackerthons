@@ -21,7 +21,7 @@ class Help(View):
     
 
 class Settings(View):
-    template_name = 'charts.html'
+    template_name = 'shortcodes.html'
     def get(self, request, *args, **kwargs):
         """
 
