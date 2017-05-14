@@ -4,6 +4,9 @@ from app.fraud_engine import fraud_models
 from app.fraud_engine.fraud_models import RandomForestModel
 from numpy import where
 
+from app.fraud_engine.utils import TransactionVerification
+
+
 class Help(View):
     template_name = 'guidely.html'
 
@@ -81,7 +84,14 @@ class Dashboard(View):
         Returns:
 
         """
+        
+        #data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
+        #data = {'email': 'asivedlaba@gmail.com', 'domain': request.get_host()}
+        #tv = TransactionVerification(data)
+        #tv.send_verification_mail()
+    
         X, y = RandomForestModel().get_data()
+
         indexes = where(y == 1)[0]
         X_anomaly = [{'account': int(X[:, -1][index]), 'amount': X[:, 0][index]
                       ,'fraud':y[index]} for index in indexes]
