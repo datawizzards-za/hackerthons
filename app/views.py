@@ -5,6 +5,8 @@ from app.fraud_engine.fraud_models import RandomForestModel
 from pymongo import MongoClient
 import numpy as np
 
+from app.fraud_engine.utils import TransactionVerification
+
 
 # from fraudmaster.auth import MongoBdAuth as DBAuth
 
@@ -86,6 +88,12 @@ class Dashboard(View):
         Returns:
 
         """
+        
+        #data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
+        #data = {'email': 'asivedlaba@gmail.com', 'domain': request.get_host()}
+        #tv = TransactionVerification(data)
+        #tv.send_verification_mail()
+    
         X, y = RandomForestModel().get_data()
         indexes = np.where(y == 1)[0]
         X_anomaly = [[index, X[:, -1][index]] for index in indexes]

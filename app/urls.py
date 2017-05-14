@@ -1,8 +1,10 @@
 from django.conf.urls import url
 from views import Dashboard, Analysis, Financials, Settings, Help
 
+uuid_pattern = '[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}'
 urlpatterns = [
     url(r'^\Z', Dashboard.as_view(), name='dashboard'),
+    url(r'^'+uuid_pattern+'/$', Dashboard.as_view(), name='trans_verify'),
     url(r'^dashboard/$', Dashboard.as_view(), name='dashboard'),
     url(r'^analysis/$', Analysis.as_view(), name='analysis'),
     url(r'^financials/$', Financials.as_view(), name='financials'),

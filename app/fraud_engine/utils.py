@@ -1,9 +1,12 @@
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
-from app.fraud_engine import config
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
+
+from app.fraud_engine import config
+from app.models import DeepLink
 
 
 def read_data():
@@ -128,8 +131,30 @@ class TransactionVerification:
                    BankZ cheque account.'
         from_email = settings.EMAIL_HOST_USER 
         to = self.data['email']
-        text_content = 'Click the link below'
+        text_content = 'Hi banker suspicious activities have been \
+                        detected on your account.'
+        deep_link = 'http://' +  self._get_deep_link()
+        html_content = '''<p>Please click on the link below to verify the 
+        transaction on your account. <br><a href="''' + deep_link + \
+        '''">''' + deep_link + '''</a></p>'''
 
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
+
+    def _get_deep_link(self):
+        """Add a onetime DeepLink object in the database.
+        
+        Args:
+            None.
+
+        Returns (uuid):
+            DeepLink object uuid.
+
+        """
+
+        host_name = self.data['domain']
+        uuid = DeepLink.objects.create().uuid
+        deep_link = host_name + '/app/' + str(uuid) + '/'
+
+        return deep_link 
