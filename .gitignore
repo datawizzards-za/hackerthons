@@ -1,5 +1,5 @@
 #sklearn modules
-fraudmaster/app/fraud_engine/utils.py
+#fraudmaster/app/fraud_engine/utils.py
 
 data/creditcard.csv
 
@@ -7,6 +7,7 @@ data/creditcard.csv
 __pycache__/
 *.py[cod]
 *$py.class
+*$
 
 # C extensions
 *.so
@@ -57,7 +58,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-
+utils.py
 # Flask stuff:
 instance/
 .webassets-cache
