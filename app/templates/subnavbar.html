@@ -3,10 +3,10 @@
     <div class="container">
       <ul class="mainnav">
         
-        <li><a href="app/dashboard"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-        <li><a href="app/analysis"><i class="icon-signal"></i><span>Analysis</span> </a> </li>
-        <li><a href="app/financials"><i class="icon-bar-chart"></i><span>Financials</span> </a> </li>
-        <li><a href="app/settings"><i class="icon-cog"></i><span>Settings</span></a> </li>
+        <li><a href="{% url 'dashboard' %}"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li><a href="{% url 'analysis' %}"><i class="icon-signal"></i><span>Analysis</span> </a> </li>
+        <li><a href="{% url 'financials' %}"><i class="icon-bar-chart"></i><span>Financials</span> </a> </li>
+        <li><a href="{% url 'settings' %}"><i class="icon-cog"></i><span>Settings</span></a> </li>
       </ul>
     </div>
     <!-- /container --> 
