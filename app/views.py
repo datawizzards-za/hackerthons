@@ -1,12 +1,17 @@
 from django.shortcuts import render
 from django.views import View
 from app.fraud_engine import fraud_models
+from app.fraud_engine.fraud_models import RandomForestModel
 from pymongo import MongoClient
-#from fraudmaster.auth import MongoBdAuth as DBAuth
+import numpy as np
+
+
+# from fraudmaster.auth import MongoBdAuth as DBAuth
 
 
 class Help(View):
     template_name = 'guidely.html'
+
     def get(self, request, *args, **kwargs):
         """
 
@@ -18,10 +23,11 @@ class Help(View):
 
         """
         return render(request, self.template_name)
-    
+
 
 class Settings(View):
     template_name = 'charts.html'
+
     def get(self, request, *args, **kwargs):
         """
 
@@ -37,6 +43,7 @@ class Settings(View):
 
 class Financials(View):
     template_name = 'reports.html'
+
     def get(self, request, *args, **kwargs):
         """
 
@@ -52,6 +59,7 @@ class Financials(View):
 
 class Analysis(View):
     template_name = 'charts.html'
+
     def get(self, request, *args, **kwargs):
         """
 
@@ -67,6 +75,7 @@ class Analysis(View):
 
 class Dashboard(View):
     template_name = 'dashboard.html'
+
     def get(self, request, *args, **kwargs):
         """
 
@@ -77,7 +86,12 @@ class Dashboard(View):
         Returns:
 
         """
-        return render(request, self.template_name)
+        X, y = RandomForestModel().get_data()
+        indexes = np.where(y == 1)[0]
+        X_anomaly = [[index, X[:, -1][index]] for index in indexes]
+        #print X_anomaly
+        context = {'values': X_anomaly, 'indexes': indexes}
+        return render(request, self.template_name, context)
 
 
 class ModelTraining(View):
@@ -89,10 +103,10 @@ class ModelTraining(View):
         accuracy, anomaly_points = model.get_accuracy()
         operation = MongoDBOperations()
         db = operation.config()
-        #operation.add_transactions(db)
+        # operation.add_transactions(db)
         print operation.get_transactions(db)
 
-        context = {'accuracy': accuracy, 'anomaly_points':anomaly_points}
+        context = {'accuracy': accuracy, 'anomaly_points': anomaly_points}
         return render(request, self.template_name, context)
 
 
