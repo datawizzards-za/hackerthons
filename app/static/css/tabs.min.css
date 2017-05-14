@@ -2148,6 +2148,705 @@ fieldset[disabled] .btn-youtube.active {
   height: 100%;
   background: transparent;
   border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  border-top: 2px solid #e91e63;
+  border-bottom-color: transparent;
+  z-index: -1;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+  top: 1px;
+  left: -1px;
+  -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  -webkit-transform: perspective(900px) rotate3d(1, 0, 0, 90deg);
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  border-top: 2px solid #e91e63;
+  border-bottom-color: transparent;
+  z-index: -1;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+  top: 1px;
+  left: -1px;
+  -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  -webkit-transform: perspective(900px) rotate3d(1, 0, 0, 90deg);
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  border-top: 2px solid #e91e63;
+  border-bottom-color: transparent;
+  z-index: -1;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+  top: 1px;
+  left: -1px;
+  -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  -webkit-transform: perspective(900px) rotate3d(1, 0, 0, 90deg);
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  border-top: 2px solid #e91e63;
+  border-bottom-color: transparent;
+  z-index: -1;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+  top: 1px;
+  left: -1px;
+  -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  -webkit-transform: perspective(900px) rotate3d(1, 0, 0, 90deg);
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  border-top: 2px solid #e91e63;
+  border-bottom-color: transparent;
+  z-index: -1;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+  top: 1px;
+  left: -1px;
+  -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  -webkit-transform: perspective(900px) rotate3d(1, 0, 0, 90deg);
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  border-top: 2px solid #e91e63;
+  border-bottom-color: transparent;
+  z-index: -1;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+  top: 1px;
+  left: -1px;
+  -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  -webkit-transform: perspective(900px) rotate3d(1, 0, 0, 90deg);
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+  font-weight: 500;
+  z-index: 999;
+}
+.nav-tabs > li.active > a {
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02), -1px 0 0 rgba(0, 0, 0, 0.015), 1px 0 0 rgba(0, 0, 0, 0.015);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+.nav-tabs > li > a:hover {
+  color: #e91e63;
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li.active > a {
+  border-color: transparent;
+}
+.tabs-flip .nav-tabs > li > a {
+  position: relative;
+}
+.tabs-flip .nav-tabs > li > a,
+.tabs-flip .nav-tabs > li > a:hover,
+.tabs-flip .nav-tabs > li > a:focus {
+  box-shadow: none;
+  background: transparent;
+}
+.tabs-flip .nav-tabs > li > a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #e4e4e4;
   border-top: 2px solid #e91e63;
   border-bottom-color: transparent;
   z-index: -1;
@@ -2627,147 +3326,7 @@ fieldset[disabled] .btn-youtube.active {
 .alert p {
   margin-bottom: 0;
 }
-.modal {
-  height: 100%;
-}
-.modal-content {
-  border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
-}
-.modal-backdrop {
-  background: #555555;
-  height: 100%;
-  position: fixed;
-  top: 0;
-}
-.modal-header {
-  min-height: auto;
-  padding: 10px 0;
-  margin: 0 20px;
-  position: relative;
-}
-.modal-header > .close {
-  position: absolute;
-  top: 1px;
-  right: -20px;
-  background: #555555;
-  color: #fff;
-  font-size: 12px;
-  display: inline-block;
-  padding: 4px 8px;
-  opacity: .9;
-}
-.modal-header > .close:hover {
-  opacity: 1;
-}
-.modal.modalFadeInScale.in .modal-dialog,
-.modal.modalSlideIn.in .modal-dialog,
-.modal.modal3DFlipHorizontal.in .modal-dialog,
-.modal.modal3DFlipVertical.in .modal-dialog,
-.modal.modalFall.in .modal-dialog,
-.modal.modalRapid.in .modal-dialog {
-  opacity: 1;
-}
-.modal.modalFadeInScale .modal-dialog,
-.modal.modalSlideIn .modal-dialog,
-.modal.modal3DFlipHorizontal .modal-dialog,
-.modal.modal3DFlipVertical .modal-dialog,
-.modal.modalFall .modal-dialog,
-.modal.modalRapid .modal-dialog {
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-.modal.modalFadeInScale.in .modal-dialog {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
-.modal.modalFadeInScale .modal-dialog {
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  -o-transform: scale(0.7);
-  transform: scale(0.7);
-}
-.modal.modalSlideIn.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-.modal.modalSlideIn .modal-dialog {
-  -webkit-transform: translate(20%, 0);
-  -ms-transform: translate(20%, 0);
-  -o-transform: translate(20%, 0);
-  transform: translate(20%, 0);
-}
-.modal.modal3DFlipHorizontal {
-  -webkit-perspective: 1300;
-  -moz-perspective: 1300;
-  perspective: 1300;
-}
-.modal.modal3DFlipHorizontal.in .modal-dialog {
-  -webkit-transform: rotateY(0);
-  -ms-transform: rotateY(0);
-  -o-transform: rotateY(0);
-  transform: rotateY(0);
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.modal.modal3DFlipHorizontal .modal-dialog {
-  -webkit-transform: rotateY(-70deg);
-  -ms-transform: rotateY(-70deg);
-  -o-transform: rotateY(-70deg);
-  transform: rotateY(-70deg);
-}
-.modal.modal3DFlipVertical {
-  -webkit-perspective: 1300;
-  -moz-perspective: 1300;
-  perspective: 1300;
-}
-.modal.modal3DFlipVertical.in .modal-dialog {
-  -webkit-transform: rotateX(0);
-  -ms-transform: rotateX(0);
-  -o-transform: rotateX(0);
-  transform: rotateX(0);
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.modal.modal3DFlipVertical .modal-dialog {
-  -webkit-transform: rotateX(-70deg);
-  -ms-transform: rotateX(-70deg);
-  -o-transform: rotateX(-70deg);
-  transform: rotateX(-70deg);
-}
-.modal.modalFall {
-  -webkit-perspective: 1300px;
-  -moz-perspective: 1300px;
-  perspective: 1300px;
-}
-.modal.modalFall.in .modal-dialog {
-  -webkit-transform: translateZ(0px) rotateX(0deg);
-  -moz-transform: translateZ(0px) rotateX(0deg);
-  -ms-transform: translateZ(0px) rotateX(0deg);
-  transform: translateZ(0px) rotateX(0deg);
-}
-.modal.modalFall .modal-dialog {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: translateZ(600px) rotateX(20deg);
-  -moz-transform: translateZ(600px) rotateX(20deg);
-  -ms-transform: translateZ(600px) rotateX(20deg);
-  transform: translateZ(600px) rotateX(20deg);
-}
-.modal.modalRapid.in .modal-dialog {
-  -webkit-animation: modalRapid 0.5s forwards ease-out;
-  -o-animation: modalRapid 0.5s forwards ease-out;
-  animation: modalRapid 0.5s forwards ease-out;
-}
+
 @-webkit-keyframes modalRapid {
   0% {
     opacity: 0;

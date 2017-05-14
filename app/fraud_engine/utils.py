@@ -54,11 +54,14 @@ class MongoDBOperations:
 class LoadData:
     def load_data(self):
         operation = MongoDBOperations()
+        print 'Importing dataset...'
         dataframe = pd.read_csv(config.DATAFILE)
         dataframe['_id'] = dataframe.index.values
         records = json.loads(dataframe.T.to_json()).values()
         db = operation.config()
+        print('Loading data..')
         operation.load_data_mongo(db, records)
+        print 'DONE!!!'
 
     def get_data(self):
         collection = MongoDBOperations().config()
