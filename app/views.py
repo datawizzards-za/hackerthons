@@ -21,7 +21,7 @@ class Help(View):
 
 
 class Settings(View):
-    template_name = 'shortcodes.html'
+    template_name = 'modal.html'
     
     def get(self, request, *args, **kwargs):
         """
