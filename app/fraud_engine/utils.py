@@ -47,6 +47,9 @@ class MongoDBOperations:
         """
         collection.insert_many(records)
 
+    def fraud_detect_update(self, collections):
+        pass
+
 
 class LoadData:
     def load_data(self):
@@ -89,7 +92,7 @@ class DataSample(object):
         """
 
         attribs = ['Xtrain', 'ytrain', 'Xtest', 'ytest', 'Xsim', 'ysim']
-        
+
         if not self._hasattrs(attribs):
             self.Xtrain = super(DataSample, self).__new__(self)
             self.ytrain = super(DataSample, self).__new__(self)
@@ -161,7 +164,7 @@ class TransactionVerification:
             Void.
         
         """
-        
+
         self.data = data
 
     def send_verification_mail(self):
@@ -180,14 +183,14 @@ class TransactionVerification:
 
         subject = 'Fraudmaster detected a fraudulent activity on your \
                    BankZ cheque account.'
-        from_email = settings.EMAIL_HOST_USER 
+        from_email = settings.EMAIL_HOST_USER
         to = self.data['email']
         text_content = 'Hi banker suspicious activities have been \
                         detected on your account.'
-        deep_link = 'http://' +  self._get_deep_link()
+        deep_link = 'http://' + self._get_deep_link()
         html_content = '''<p>Please click on the link below to verify the 
         transaction on your account. <br><a href="''' + deep_link + \
-        '''">''' + deep_link + '''</a></p>'''
+                       '''">''' + deep_link + '''</a></p>'''
 
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
@@ -208,4 +211,4 @@ class TransactionVerification:
         uuid = DeepLink.objects.create().uuid
         deep_link = host_name + '/app/' + str(uuid) + '/'
 
-        return deep_link 
+        return deep_link
