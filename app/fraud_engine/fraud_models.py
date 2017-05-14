@@ -13,6 +13,8 @@ class RandomForestModel:
     def train(self):
         self.classifier.fit(self.Xtrain, self.ytrain)
 
+    def get_data(self):
+        return self.Xsim, self.ysim
 
     def get_accuracy(self):
         predicted = self.classifier.predict(self.Xtest)
