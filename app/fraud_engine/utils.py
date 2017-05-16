@@ -48,6 +48,17 @@ class MongoDBOperations:
         collection.insert_many(records)
 
     def fraud_detect_update(self, collections):
+        # Trasaction status
+        # 0 - normal
+        # 1 - locked
+        # 2 - suspesious
+        # 3 - released
+        #______________#
+
+        # trasaction type
+        # 0 - withdrawal
+        # 1 - transfer
+        # 2 - payment
         pass
 
 
