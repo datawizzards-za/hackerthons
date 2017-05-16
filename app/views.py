@@ -7,6 +7,22 @@ from numpy import where
 from app.fraud_engine.utils import TransactionVerification
 
 
+class Demo(View):
+    template_name = 'demo.html'
+
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        return render(request, self.template_name)
+
+
 class Help(View):
     template_name = 'guidely.html'
 
@@ -94,9 +110,10 @@ class Dashboard(View):
 
         indexes = where(y == 1)[0]
         X_anomaly = [{'account': int(X[:, -1][index]), 'amount': X[:, 0][index]
-                      ,'fraud':y[index]} for index in indexes]
-
-        context = {'values': X_anomaly, 'indexes': indexes}
+                      ,'fraud':y[index], 'index': index} for index in indexes]
+                      
+        context = {'data': X_anomaly}
+        
         return render(request, self.template_name, context)
 
 

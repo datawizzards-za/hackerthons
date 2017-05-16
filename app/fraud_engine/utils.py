@@ -3,7 +3,7 @@ import json
 
 from sklearn.cross_validation import train_test_split
 from pymongo import MongoClient
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
