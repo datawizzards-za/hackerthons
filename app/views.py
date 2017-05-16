@@ -3,9 +3,8 @@ from django.views import View
 from app.fraud_engine import fraud_models
 from app.fraud_engine.fraud_models import RandomForestModel
 from app.fraud_engine.utils import MongoDBOperations
-from numpy import where
-
 from app.fraud_engine.utils import TransactionVerification
+from numpy import where
 
 class UpdateTrasaction(View):
     def get(self, request, *args, **kwargs):
@@ -141,9 +140,9 @@ class Dashboard(View):
         """
 
         # data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
-        # data = {'email': 'asivedlaba@gmail.com', 'domain': request.get_host()}
-        # tv = TransactionVerification(data)
-        # tv.send_verification_mail()
+        data = {'email': 'ofentsweucl@gmail.com', 'domain': request.get_host()}
+        tv = TransactionVerification(data)
+        tv.send_verification_mail()
 
         X, y = RandomForestModel().get_data()
         print X[0]

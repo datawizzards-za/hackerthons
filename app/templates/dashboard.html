@@ -44,13 +44,13 @@
                                                   
                                                   <td> 2017-{{item.account}} </td>
                                                   <td class="td-actions">
-                                                      <a href="#modal_release_{{item.index}}" data-toggle="modal" role="button" class="btn btn-block btn-success" title="Release Transaction">
+                                                      <a href="#modal_release_{{item.account}}" data-toggle="modal" role="button" class="btn btn-block btn-success" title="Release Transaction">
                                                           <i class="btn-icon-only icon-ok"> </i>
                                                       </a>
-                                                      <a href="#modal_lock_{{item.index}}" data-toggle="modal" role="button" class="btn btn-danger btn-block" title="Lock Transaction">
+                                                      <a href="#modal_lock_{{item.account}}" data-toggle="modal" role="button" class="btn btn-danger btn-block" title="Lock Transaction">
                                                           <i class="btn-icon-only icon-lock"> </i>
                                                       </a>
-                                                      <a href="#modal_open_{{item.index}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
+                                                      <a href="#modal_open_{{item.account}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
                                                           <i class="btn-icon-only icon-folder-open"> </i>
                                                       </a>
                                                   </td>
@@ -85,10 +85,10 @@
                                                   <td> R{{ item.amount }} </td>
                                                   <td> 2017-{{item.account}} </td>
                                                   <td class="td-actions">
-                                                      <a href="#modal_unlock_{{item.index}}" data-toggle="modal" role="button" class="btn btn-block btn-success" title="Unlock Transaction">
+                                                      <a href="#modal_unlock_{{item.account}}" data-toggle="modal" role="button" class="btn btn-block btn-success" title="Unlock Transaction">
                                                           <i class="btn-icon-only icon-unlock"> </i>
                                                       </a>
-                                                      <a href="#modal_open_{{item.index}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
+                                                      <a href="#modal_open_{{item.account}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
                                                           <i class="btn-icon-only icon-folder-open"> </i>
                                                       </a>
                                                   </td>
@@ -122,7 +122,7 @@
                                                   <td> R{{ item.amount }} </td>
                                                   <td> 2017-{{item.fraud}} </td>
                                                   <td class="td-actions">
-                                                      <a href="#modal_open_{{item.index}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
+                                                      <a href="#modal_open_{{item.account}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
                                                           <i class="btn-icon-only icon-folder-open"> </i>
                                                       </a>
                                                   </td>
@@ -156,7 +156,7 @@
                                                   <td> R{{ item.amount }} </td>
                                                   <td> 2017-{{item.account}} </td>
                                                   <td class="td-actions">
-                                                      <a href="#modal_open_{{item.index}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
+                                                      <a href="#modal_open_{{item.account}}" data-toggle="modal" role="button" class="btn btn-block btn-warning" title="Open Transaction">
                                                           <i class="btn-icon-only icon-folder-open"> </i>
                                                       </a>
                                                   </td>
@@ -188,7 +188,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_release_1893" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        {% for item in values %}
+                        <div id="modal_release_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel">Release Transaction</h3>
@@ -201,6 +202,7 @@
                                 <button class="btn btn-lg btn-primary">yes</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
@@ -210,7 +212,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_open_1893" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      {% for item in values %}
+                        <div id="modal_open_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel">Fraud MAster</h3>
@@ -223,6 +226,7 @@
                                 <button class="btn btn-lg btn-primary">MORE</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
@@ -233,7 +237,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_unlock_1893" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      {% for item in values %}
+                        <div id="modal_unlock_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel"> Unlock Transaction</h3>
@@ -246,6 +251,7 @@
                                 <button class="btn btn-lg btn-primary">yes</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
@@ -256,7 +262,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_lock_1893" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    {% for item in data %}
+                        <div id="modal_lock_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel"> Lock Transaction</h3>
@@ -265,10 +272,11 @@
                                 <p>Are you sure you want to lock this transaction?</p>                                                                                                    
                             </div> 
                             <div class="modal-footer">
-                                <button class="btn btn-lg btn-warning" data-dismiss="modal" aria-hidden="true">NO</button>
+                                <a class="btn btn-lg btn-warning" href="{% url 'accept' item.account %}">NO</a>
                                 <button class="btn btn-lg btn-primary">yes</button>
                             </div>
                         </div>
+                    {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>

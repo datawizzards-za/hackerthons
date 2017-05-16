@@ -12,7 +12,6 @@ from django.core.mail import EmailMultiAlternatives
 from app.models import DeepLink
 from app.fraud_engine import config
 
-
 class MongoDBOperations:
     def config(self):
         """
@@ -58,7 +57,10 @@ class MongoDBOperations:
 
         collection.update_one({'_id': unique_id},
                               {'$set': {'Class': 0}},upsert=False)
-
+        data = {'email': 'ofentsweucl@gmail.com', 'domain':
+            '127.0.0.1:9000'}
+        tv = TransactionVerification(data)
+        tv.send_verification_mail()
         return unique_id
 
     def release_transaction(self, unique_id, collection):
