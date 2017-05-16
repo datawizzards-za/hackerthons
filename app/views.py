@@ -6,6 +6,38 @@ from app.fraud_engine.utils import MongoDBOperations
 from app.fraud_engine.utils import TransactionVerification
 from numpy import where
 
+class Dashboard(View):
+    template_name = 'dashboard.html'
+
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+
+        # data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
+        # data = {'email': 'asivedlaba@gmail.com', 'domain': request.get_host()}
+        # tv = TransactionVerification(data)
+        # tv.send_verification_mail()
+
+        X, y = RandomForestModel().get_data()
+        #print X[0]
+        indexes = where(y == 1)[0]
+
+        X_fraud = [{'account': int(X[:, -3][index]), 'amount': X[:, 0][index],
+                    'fraud': y[index], 'type': int(X[:, -1][index]),'index': index,
+                    'status': int(X[:, -2][index])} for index in indexes]
+                      
+        context = {'data': X_fraud}
+
+        return render(request, self.template_name, context)
+
+
 class UpdateTrasaction(View):
     def get(self, request, *args, **kwargs):
         """
@@ -123,38 +155,6 @@ class Analysis(View):
 
         """
         return render(request, self.template_name)
-
-
-class Dashboard(View):
-    template_name = 'dashboard.html'
-
-    def get(self, request, *args, **kwargs):
-        """
-
-        Args:
-            *args:
-            **kwargs:
-
-        Returns:
-
-        """
-
-        # data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
-        data = {'email': 'ofentsweucl@gmail.com', 'domain': request.get_host()}
-        tv = TransactionVerification(data)
-        tv.send_verification_mail()
-
-        X, y = RandomForestModel().get_data()
-        print X[0]
-        indexes = where(y == 1)[0]
-
-        X_fraud = [{'account': int(X[:, -3][index]), 'amount': X[:, 0][index],
-                    'fraud': y[index], 'type': int(X[:, -1][index]),'index': index,
-                    'status': X[:, -2][index]} for index in indexes]
-                      
-        context = {'data': X_fraud}
-
-        return render(request, self.template_name, context)
 
 
 class ModelTraining(View):

@@ -51,7 +51,7 @@ class MongoDBOperations:
         # Trasaction status
         # 0 - normal
         # 1 - locked
-        # 2 - suspesious
+        # 2 - suspicious
         # 3 - released
         # ______________#
 
@@ -104,7 +104,7 @@ class LoadData:
         json_data = MongoDBOperations().get_transactions(collection)
         dataframe = pd.DataFrame(list(json_data))
         dataframe = dataframe.reindex_axis(sorted(dataframe.columns), axis=1)
-        print dataframe.columns
+        #print dataframe.columns
         return dataframe
 
 
