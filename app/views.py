@@ -7,7 +7,6 @@ from numpy import where
 
 from app.fraud_engine.utils import TransactionVerification
 
-
 class UpdateTrasaction(View):
     def get(self, request, *args, **kwargs):
         """
@@ -55,6 +54,12 @@ class UnlockTrasaction(View):
         MongoDBOperations().release_transaction(int(kwargs['ac']),
                                                 collection)
         return HttpResponseRedirect('/')
+
+class Demo(View):
+    template_name = 'demo.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
 
 
 class Help(View):
@@ -143,11 +148,13 @@ class Dashboard(View):
         X, y = RandomForestModel().get_data()
         print X[0]
         indexes = where(y == 1)[0]
-        X_fraud = [{'account': int(X[:, -3][index]), 'amount': X[:, 0][index],
-                    'fraud': y[index], 'type': int(X[:, -1]),
-                    'status': X[:, -2]} for index in indexes]
 
-        context = {'values': X_fraud, 'indexes': indexes}
+        X_fraud = [{'account': int(X[:, -3][index]), 'amount': X[:, 0][index],
+                    'fraud': y[index], 'type': int(X[:, -1][index]),'index': index,
+                    'status': X[:, -2][index]} for index in indexes]
+                      
+        context = {'data': X_fraud}
+
         return render(request, self.template_name, context)
 
 
