@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from django.views import View
 from app.fraud_engine import fraud_models
 from app.fraud_engine.fraud_models import RandomForestModel
+from app.fraud_engine.utils import MongoDBOperations
 from numpy import where
 
 from app.fraud_engine.utils import TransactionVerification
 
+class UpdateTrasaction(View):
+
+    def get(self, request, *args, **kwargs):
+        collection = MongoDBOperations().config()
+        MongoDBOperations().fraud_detect_update(int(kwargs['ac']),
+                                                collection)
+        return HttpResponseRedirect('/')
 
 class Help(View):
     template_name = 'guidely.html'

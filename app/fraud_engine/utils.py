@@ -11,6 +11,9 @@ from django.core.mail import EmailMultiAlternatives
 from app.models import DeepLink
 from app.fraud_engine import config
 
+from rest_framework import generics
+from django.shortcuts import HttpResponse
+
 
 class MongoDBOperations:
     def config(self):
@@ -47,19 +50,23 @@ class MongoDBOperations:
         """
         collection.insert_many(records)
 
-    def fraud_detect_update(self, collections):
+    def fraud_detect_update(self, unique_id, collection):
         # Trasaction status
         # 0 - normal
         # 1 - locked
         # 2 - suspesious
         # 3 - released
-        #______________#
+        # ______________#
 
         # trasaction type
         # 0 - withdrawal
         # 1 - transfer
         # 2 - payment
-        pass
+
+        collection.update_one({'_id': unique_id}, {'$set': {'Class': 0}},
+                              upsert=False)
+
+        return unique_id
 
 
 class LoadData:
