@@ -80,6 +80,7 @@
                                               </thead>
                                               <tbody>
                                               {% for item in data %}
+                                              {% if item.status == 1 %}
                                                 <tr class="hvr-shrink">
                                                   <td> {{ item.account }} </td>
                                                   <td> R{{ item.amount }} </td>
@@ -93,6 +94,7 @@
                                                       </a>
                                                   </td>
                                                 </tr>
+                                                {% endif %}
                                                 {% endfor %}
                                               </tbody>
                                             </table>
@@ -117,6 +119,7 @@
 
                                               <tbody>
                                                 {% for item in data %}
+                                                {% if item.status == 2 %}
                                                 <tr class="hvr-shrink">
                                                   <td> {{ item.account }} </td>
                                                   <td> R{{ item.amount }} </td>
@@ -127,6 +130,7 @@
                                                       </a>
                                                   </td>
                                                 </tr>
+                                                {% endif %}
                                                 {% endfor %}
                         
                                               </tbody>
@@ -151,6 +155,7 @@
                                               </thead>
                                               <tbody>
                                                 {% for item in data %}
+                                                {% if item.status == 3 %}
                                                 <tr class="hvr-shrink">
                                                   <td> {{ item.account }} </td>
                                                   <td> R{{ item.amount }} </td>
@@ -161,6 +166,7 @@
                                                       </a>
                                                   </td>
                                                 </tr>
+                                                {% endif %}
                                                 {% endfor %}
                                               </tbody>
                                             </table>
@@ -188,7 +194,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_release_8842" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        {% for item in data %}
+                        <div id="modal_release_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel">Release Transaction</h3>
@@ -201,6 +208,7 @@
                                 <button class="btn btn-lg btn-primary">yes</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
@@ -210,7 +218,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_open_8842" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        {% for item in data %}
+                        <div id="modal_open_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel">Fraud MAster</h3>
@@ -223,6 +232,7 @@
                                 <button class="btn btn-lg btn-primary">MORE</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
@@ -233,7 +243,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_unlock_8842" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        {% for item in data %}
+                        <div id="modal_unlock_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -247,6 +258,7 @@
                                 <button class="btn btn-lg btn-primary">yes</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
@@ -257,7 +269,8 @@
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <div id="modal_lock_8842" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        {% for item in data %}
+                        <div id="modal_lock_{{item.account}}" class="modal hide fade animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h3 id="myModalLabel"> Lock Transaction</h3>
@@ -270,6 +283,7 @@
                                 <button class="btn btn-lg btn-primary">yes</button>
                             </div>
                         </div>
+                        {% endfor %}
                     </div> <!-- /controls -->	
                 </div> <!-- /control-group -->
             </fieldset>
