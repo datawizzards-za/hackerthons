@@ -41,12 +41,13 @@
                                                 <tr class="hvr-shrink">
                                                   <td> {{ item.account }} </td>
                                                   <td> R{{ item.amount }} </td>
+                                                  
                                                   <td> 2017-{{item.account}} </td>
                                                   <td class="td-actions">
                                                       <a href="{% url 'accept' item.account %}" class="btn btn-small btn-success">
                                                           <i class="btn-icon-only icon-ok"> </i>
                                                       </a>
-                                                      <a href="javascript:;" class="btn btn-danger btn-small">
+                                                      <a href="{% url 'lock' item.account %}" class="btn btn-danger btn-small">
                                                           <i class="btn-icon-only icon-lock"> </i>
                                                       </a>
                                                       <a href="javascript:;" class="btn btn-small btn-warning">

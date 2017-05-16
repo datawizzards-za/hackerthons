@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from views import Dashboard, Analysis, Financials, Settings, \
-    Help, UpdateTrasaction
+    Help, UpdateTrasaction, LockTrasaction, UnlockTrasaction
 
 uuid_pattern = '[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}'
 
@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^settings/$', Settings.as_view(), name='settings'),
     url(r'^help/$', Help.as_view(), name='help'),
     url(r'^accept/(?P<ac>[0-9]+)/', UpdateTrasaction.as_view(),name='accept'),
-    url(r'^lock/(?P<ac>[0-9]+)/', UpdateTrasaction.as_view(), name='lock'),
-    url(r'^unlock/(?P<ac>[0-9]+)/', UpdateTrasaction.as_view(), name='unlock'),
+    url(r'^lock/(?P<ac>[0-9]+)/', LockTrasaction.as_view(), name='lock'),
+    url(r'^unlock/(?P<ac>[0-9]+)/', UnlockTrasaction.as_view(), name='unlock'),
     # url(r'^report/(?P<>[0-9]+)/',UpdateTrasaction.as_view(), name='report'),
 ]

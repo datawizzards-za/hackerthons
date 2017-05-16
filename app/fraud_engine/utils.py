@@ -6,13 +6,11 @@ from pymongo import MongoClient
 from sklearn.model_selection import train_test_split
 from django.conf import settings
 from django.core.mail import send_mail
+from numpy import random
 from django.core.mail import EmailMultiAlternatives
 
 from app.models import DeepLink
 from app.fraud_engine import config
-
-from rest_framework import generics
-from django.shortcuts import HttpResponse
 
 
 class MongoDBOperations:
@@ -58,16 +56,31 @@ class MongoDBOperations:
         # 3 - released
         # ______________#
 
-        # trasaction type
-        # 0 - withdrawal
-        # 1 - transfer
-        # 2 - payment
-
-        collection.update_one({'_id': unique_id}, {'$set': {'Class': 0}},
-                              upsert=False)
+        collection.update_one({'_id': unique_id},
+                              {'$set': {'Class': 0}},upsert=False)
 
         return unique_id
 
+    def release_transaction(self, unique_id, collection):
+
+        collection.update_one({'_id': unique_id},
+                              {'$set': {'status': 3}}, upsert=False)
+
+        return unique_id
+
+    def lock_transaction(self, unique_id, collection):
+
+        collection.update_one({'_id': unique_id},
+                              {'$set': {'status': 1}}, upsert=False)
+
+        return unique_id
+
+    def suspect_transaction(self, unique_id, collection):
+
+        collection.update_one({'_id': unique_id},
+                              {'$set': {'status': 2}}, upsert=False)
+
+        return unique_id
 
 class LoadData:
     def load_data(self):
@@ -75,6 +88,9 @@ class LoadData:
         print 'Importing dataset...'
         dataframe = pd.read_csv(config.DATAFILE)
         dataframe['_id'] = dataframe.index.values
+        length = len(dataframe)
+        dataframe['type'] = random.randint(0, 3, size=(length, 1))
+        dataframe['status'] = random.randint(0, 4, size=(length, 1))
         records = json.loads(dataframe.T.to_json()).values()
         db = operation.config()
         print('Loading data..')
@@ -83,8 +99,11 @@ class LoadData:
 
     def get_data(self):
         collection = MongoDBOperations().config()
-        dataframe = MongoDBOperations().get_transactions(collection)
-        return pd.DataFrame(list(dataframe))
+        json_data = MongoDBOperations().get_transactions(collection)
+        dataframe = pd.DataFrame(list(json_data))
+        dataframe = dataframe.reindex_axis(sorted(dataframe.columns), axis=1)
+        print dataframe.columns
+        return dataframe
 
 
 class DataSample(object):
