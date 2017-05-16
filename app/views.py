@@ -1,15 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from django.views import View
 from app.fraud_engine import fraud_models
 from app.fraud_engine.fraud_models import RandomForestModel
+from app.fraud_engine.utils import MongoDBOperations
 from numpy import where
 
 from app.fraud_engine.utils import TransactionVerification
 
-
-class Demo(View):
-    template_name = 'demo.html'
-
+class UpdateTrasaction(View):
     def get(self, request, *args, **kwargs):
         """
 
@@ -20,6 +18,47 @@ class Demo(View):
         Returns:
 
         """
+        collection = MongoDBOperations().config()
+        MongoDBOperations().fraud_detect_update(int(kwargs['ac']),
+                                                collection)
+        return HttpResponseRedirect('/')
+
+class LockTrasaction(View):
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        collection = MongoDBOperations().config()
+        MongoDBOperations().lock_transaction(int(kwargs['ac']),
+                                                collection)
+        return HttpResponseRedirect('/')
+
+class UnlockTrasaction(View):
+    def get(self, request, *args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
+        collection = MongoDBOperations().config()
+        MongoDBOperations().release_transaction(int(kwargs['ac']),
+                                                collection)
+        return HttpResponseRedirect('/')
+
+class Demo(View):
+    template_name = 'demo.html'
+
+    def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
 
@@ -41,7 +80,7 @@ class Help(View):
 
 class Settings(View):
     template_name = 'modal.html'
-    
+
     def get(self, request, *args, **kwargs):
         """
 
@@ -100,20 +139,22 @@ class Dashboard(View):
         Returns:
 
         """
-        
-        #data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
-        #data = {'email': 'asivedlaba@gmail.com', 'domain': request.get_host()}
-        #tv = TransactionVerification(data)
-        #tv.send_verification_mail()
-    
-        X, y = RandomForestModel().get_data()
 
+        # data = {'email': 'mabu@itechhub.co.za', 'domain': request.get_host()}
+        # data = {'email': 'asivedlaba@gmail.com', 'domain': request.get_host()}
+        # tv = TransactionVerification(data)
+        # tv.send_verification_mail()
+
+        X, y = RandomForestModel().get_data()
+        print X[0]
         indexes = where(y == 1)[0]
-        X_anomaly = [{'account': int(X[:, -1][index]), 'amount': X[:, 0][index]
-                      ,'fraud':y[index], 'index': index} for index in indexes]
+
+        X_fraud = [{'account': int(X[:, -3][index]), 'amount': X[:, 0][index],
+                    'fraud': y[index], 'type': int(X[:, -1][index]),'index': index,
+                    'status': X[:, -2][index]} for index in indexes]
                       
-        context = {'data': X_anomaly}
-        
+        context = {'data': X_fraud}
+
         return render(request, self.template_name, context)
 
 
