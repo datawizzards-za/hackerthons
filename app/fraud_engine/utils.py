@@ -57,7 +57,7 @@ class MongoDBOperations:
 
         collection.update_one({'_id': unique_id},
                               {'$set': {'Class': 0}},upsert=False)
-        data = {'email': 'ofentsweucl@gmail.com', 'domain':
+        data = {'email': 'mabu@itechhub.co.za', 'domain':
             '127.0.0.1:9000'}
         tv = TransactionVerification(data)
         tv.send_verification_mail()
