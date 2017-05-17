@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataWizards</string>
+    <string name="transaction">no transaction is detected yet</string>
+    <string name="confirm">Confirm</string>
+    <string name="reject">Reject</string>
+    <string name="close">exit</string>
+</resources>

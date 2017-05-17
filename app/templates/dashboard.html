@@ -202,11 +202,11 @@
                                 <h3 id="myModalLabel">Release Transaction</h3>
                             </div>
                             <div class="modal-body">                                                                                                     
-                                <p>Are you sure you want to release this transaction?</p>                                                                                                    
+                                <p>Are you sure you want to release this transaction?</p>                                                                                       
                             </div> 
                             <div class="modal-footer">
-                                <button class="btn btn-lg btn-danger" data-dismiss="modal" aria-hidden="true">NO</button>
-                                <button class="btn btn-lg btn-primary">yes</button>
+                                <a class="btn btn-lg btn-danger" href="">NO</a>
+                                <a class="btn btn-lg btn-primary" href="{% url 'accept' item.account %}">yes</a>
                             </div>
                         </div>
                         {% endfor %}
@@ -256,8 +256,8 @@
                                 <p>Are you sure you want to unlock this transaction?</p>                                                                                                    
                             </div> 
                             <div class="modal-footer">
-                                <button class="btn btn-lg btn-danger" data-dismiss="modal" aria-hidden="true">NO</button>
-                                <button class="btn btn-lg btn-primary">yes</button>
+                                <a class="btn btn-lg btn-danger" href="">NO</a>
+                                <a class="btn btn-lg btn-primary" href="{% url 'unlock' item.account %}">yes</a>
                             </div>
                         </div>
                         {% endfor %}
@@ -282,8 +282,8 @@
                                 <p>Are you sure you want to lock this transaction?</p>                                                                                                    
                             </div> 
                             <div class="modal-footer">
-                                <a class="btn btn-lg btn-warning" href="{% url 'accept' item.account %}">NO</a>
-                                <button class="btn btn-lg btn-primary">yes</button>
+                                <a class="btn btn-lg btn-warning" href="">NO</a>
+                                <a class="btn btn-lg btn-primary" href="{% url 'lock' item.account %}">yes</a>
                             </div>
                         </div>
                     {% endfor %}
