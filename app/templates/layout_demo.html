@@ -12,13 +12,13 @@
 <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
 <link href="{% static 'css/style.css' %}" rel="stylesheet">
 <link href="{% static 'css/pages/dashboard.css' %}" rel="stylesheet">
-<link href="{% static 'css/tabs.min.css' %}" rel="stylesheet">
 {% block extracss %}{% endblock %}
 </head>
 
 <body>
 {% include 'navbar_user.html' %}
-{% include 'subnavbar.html' %}
+
+<br />
 
 <div class="main">
   <div class="main-inner">
@@ -38,9 +38,7 @@
 <!-- Placed at the end of the document so the pages load faster --> 
 <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
 <script src="{% static 'js/excanvas.min.js' %}"></script>
-<script src="{% static 'js/chart.min.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
-<script language="javascript" type="text/javascript" src="{% static 'js/full-calendar/fullcalendar.min.js' %}"></script>
  
 <script src="{% static 'js/base.js' %}"></script>
 

@@ -1,11 +1,83 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from django.views import View
+
 from app.fraud_engine import fraud_models
 from app.fraud_engine.fraud_models import RandomForestModel
 from app.fraud_engine.utils import MongoDBOperations
+#from app.fraud_engine.utils import TransactionVerification
 from numpy import where
+import json
+from models import DeepLink
 
-from app.fraud_engine.utils import TransactionVerification
+
+
+class Phone(View):
+    def post(self, request,  *args, **kwargs):
+        account = kwargs['ac']
+        response = {
+        "contacts": [
+            {
+                    "id": "c200",
+                    "name": "Mabu Manaileng",
+                    "email": "mabu@gmail.com",
+                    "address": "xx-xx-xxxx,x - street, x - country",
+                    "gender" : "male",
+                    "phone": {
+                        "mobile": "+91 0000000000",
+                        "home": "00 000000",
+                        "office": "00 000000"
+                    }
+            },
+            {
+                    "id": "c201",
+                    "name": "Doctor Lero",
+                    "email": "doctor.lero@gmail.com",
+                    "address": "xx-xx-xxxx,x - street, x - country",
+                    "gender" : "male",
+                    "phone": {
+                        "mobile": "+91 0000000000",
+                        "home": "00 000000",
+                        "office": "00 000000"
+                    }
+            }
+                ]
+            }
+
+        dictionary = json.dumps(response)
+        return HttpResponse(dictionary)
+
+    def get(self, request,  *args, **kwargs):
+        response = {
+        "contacts": [
+            {
+                    "id": "c200",
+                    "name": "Ravi Tamada",
+                    "email": "ravi@gmail.com",
+                    "address": "xx-xx-xxxx,x - street, x - country",
+                    "gender" : "male",
+                    "phone": {
+                        "mobile": "+91 0000000000",
+                        "home": "00 000000",
+                        "office": "00 000000"
+                    }
+            },
+            {
+                    "id": "c201",
+                    "name": "Johnny Depp",
+                    "email": "johnny_depp@gmail.com",
+                    "address": "xx-xx-xxxx,x - street, x - country",
+                    "gender" : "male",
+                    "phone": {
+                        "mobile": "+91 0000000000",
+                        "home": "00 000000",
+                        "office": "00 000000"
+                    }
+            }
+                ]
+            }
+
+        dictionary = json.dumps(response)
+        return HttpResponse(dictionary)
 
 class Dashboard(View):
     template_name = 'dashboard.html'

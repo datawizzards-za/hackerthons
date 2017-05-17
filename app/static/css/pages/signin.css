@@ -39,6 +39,7 @@ body{ background: url(../../img/body-bg.png); color:#838383; font: 13px/1.7em 'O
 
 .login-fields label {
 	display: none;
+        text-align: center;
 }
 
 .login-fields input {
@@ -197,6 +198,7 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 .register .login-fields input {
 	width: 299px;
 	padding-left: 6px;
+        text-align: center;
 }
 
 .register h1 {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:background="#BBDEFB"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_height="match_parent"
+    tools:context="com.wizards.data.datawizards.Confirm">
+    <TextView
+        android:id="@+id/tvDisplayInfo"
+        android:layout_width="match_parent"
+        android:layout_weight="0.9"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/transaction" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/my_buttons"
+            android:elevation="24dp"
+            android:layout_margin="8dp"
+            android:layout_weight="0.5"
+            android:text="@string/confirm"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/my_buttons"
+            android:layout_margin="8dp"
+            android:text="@string/reject"
+            android:elevation="24dp"
+            android:textColor="@color/reject"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/my_buttons"
+            android:elevation="24dp"
+            android:text="@string/close"
+            android:textColor="@color/reject" />
+    </LinearLayout>
+</LinearLayout>
